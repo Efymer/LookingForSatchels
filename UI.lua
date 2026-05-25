@@ -119,32 +119,11 @@ local function buildLFGButton(index, anchorName, lfgCategory, dungeonIdSource)
     end
 
     b:SetScript("OnClick", function(self)
-        if IsShiftKeyDown() then
-            if self.lfgCategory == "RaidFinder" then
-                for i = 1, GetNumRFDungeons() do
-                    local id = GetRFDungeonInfo(i)
-                    if IsLFGDungeonJoinable(id) then
-                        addon:AddWatch(id, self.lfgCategory)
-                    end
-                end
-            end
-        elseif IsControlKeyDown() then
-            if self.lfgCategory == "RaidFinder" then
-                local toRemove = {}
-                for id, v in pairs(addon.db.LFG_dungeonIDs) do
-                    if v.status and v.status >= 1 and v.lfgCategory == "RaidFinder" then
-                        toRemove[#toRemove + 1] = id
-                    end
-                end
-                for _, id in ipairs(toRemove) do addon:RemoveWatch(id) end
-            end
+        local selected = self.dungeonIdSource and self.dungeonIdSource[1] and self.dungeonIdSource[1][self.dungeonIdSource[2]]
+        if self.status == 0 then
+            addon:AddWatch(selected, self.lfgCategory)
         else
-            local selected = self.dungeonIdSource and self.dungeonIdSource[1] and self.dungeonIdSource[1][self.dungeonIdSource[2]]
-            if self.status == 0 then
-                addon:AddWatch(selected, self.lfgCategory)
-            else
-                addon:RemoveWatch(selected)
-            end
+            addon:RemoveWatch(selected)
         end
         self:UpdateStatus()
     end)
@@ -156,11 +135,6 @@ local function buildLFGButton(index, anchorName, lfgCategory, dungeonIdSource)
             GameTooltip:AddLine("|cffffffffClick: Add to watch list|r")
         else
             GameTooltip:AddLine("|cffffffffClick: Remove from watch list|r")
-        end
-        if self.lfgCategory == "RaidFinder" then
-            GameTooltip:AddLine(" ")
-            GameTooltip:AddLine("|cffffffffShift-click: add all RaidFinder wings to watch list|r")
-            GameTooltip:AddLine("|cffffffffControl-click: remove all RaidFinder wings from watch list|r")
         end
         GameTooltip:Show()
     end)
@@ -323,13 +297,10 @@ function addon.UI:OnWatchlistChanged()
 end
 
 function addon.UI:Initialize()
-    -- L+ buttons need their parent frames to exist; LFD/RF frames load on demand
-    -- so build them lazily here, after PLAYER_ENTERING_WORLD.
+    -- L+ button needs its parent frame to exist; the LFD frame loads on demand
+    -- so build it lazily here, after PLAYER_ENTERING_WORLD.
     local lfdBtn = buildLFGButton(1, "LFDQueueFrameTypeDropdown", "LFD", { LFDQueueFrame, "type" })
     if lfdBtn then table.insert(lfgButtons, lfdBtn) end
-
-    local rfBtn = buildLFGButton(2, "RaidFinderQueueFrameSelectionDropdown", "RaidFinder", { RaidFinderQueueFrame, "raid" })
-    if rfBtn then table.insert(lfgButtons, rfBtn) end
 
     if hooksecurefunc and LFGRewardsFrame_UpdateFrame then
         hooksecurefunc("LFGRewardsFrame_UpdateFrame", onLFGRewardsFrameUpdate)

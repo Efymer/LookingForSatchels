@@ -30,8 +30,6 @@ local function isAlreadyQueued(dungeonID, lfgCategory)
         return GetLFGMode(LE_LFG_CATEGORY_LFD) and true or false
     elseif lfgCategory == "Scenario" then
         return GetLFGMode(LE_LFG_CATEGORY_SCENARIO) and true or false
-    elseif lfgCategory == "RaidFinder" then
-        return GetLFGMode(LE_LFG_CATEGORY_RF, dungeonID) and true or false
     end
     return false
 end
@@ -176,10 +174,6 @@ function eventFrame.joinLFG(dungeonID, lfgCategory, removeFromWatchlist)
         LFG_JoinDungeon(LE_LFG_CATEGORY_LFD, dungeonID, LFDDungeonList, LFDHiddenByCollapseList)
     elseif lfgCategory == "Scenario" then
         LFG_JoinDungeon(LE_LFG_CATEGORY_SCENARIO, dungeonID, ScenariosList, ScenariosHiddenByCollapseList)
-    elseif lfgCategory == "RaidFinder" then
-        ClearAllLFGDungeons(LE_LFG_CATEGORY_RF)
-        SetLFGDungeon(LE_LFG_CATEGORY_RF, dungeonID)
-        JoinSingleLFG(LE_LFG_CATEGORY_RF, dungeonID)
     end
     if removeFromWatchlist then addon:RemoveWatch(dungeonID) end
     popPopup()

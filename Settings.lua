@@ -69,6 +69,15 @@ local function migrate(db)
     db.frameOffsetX, db.frameOffsetY = nil, nil
     db.showFrame = nil
     db.addonVersion = nil
+
+    -- RaidFinder does not exist in MoP Classic; drop any legacy watch-list entries.
+    if type(db.LFG_dungeonIDs) == "table" then
+        for id, entry in pairs(db.LFG_dungeonIDs) do
+            if entry and entry.lfgCategory == "RaidFinder" then
+                db.LFG_dungeonIDs[id] = nil
+            end
+        end
+    end
 end
 
 local function seedDefaults(db)

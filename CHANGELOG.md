@@ -1,5 +1,11 @@
 # Changelog
 
+## [v1.1]
+
+- Removed Raid Finder support (Raid Finder doesn't exist in MoP Classic)
+- The L+ button now only appears on the Dungeon Finder
+- Old Raid Finder watch-list entries are stripped on first load
+
 ## [v1.0.1]
 
 - Hook CurseForge auto-upload (Project ID 1553678)
