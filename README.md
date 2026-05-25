@@ -1,15 +1,20 @@
 # LookingForSatchels
 
-`LookingForSatchels` is a lightweight World of Warcraft Mists of Pandaria Classic (5.5.x) addon that alerts you when a Looking For Group "Call to Arms" satchel becomes available for a role you're willing to play, so you can queue the moment the bonus drops.
+**Never miss an LFG satchel again.**
+
+`LookingForSatchels` is a lightweight World of Warcraft Mists of Pandaria Classic (5.5.x) addon that watches Blizzard's **Call to Arms** role-bonus system and pings you the instant a satchel becomes available for a dungeon or Raid Finder wing you're tracking — for the roles you're willing to play. When a match appears it flashes the WoW window, plays a sound, prints a chat alert, and pops a draggable **Queue?** dialog letting you join with a single click.
+
+It's designed to run quietly in the background while you're out questing, AFK in a city, or running other content — so you can take advantage of a 30-minute Tank-shortage bonus the moment it drops, without parking yourself in front of the Dungeon Finder window.
 
 ## Features
 
-- Adds an `L+` / `L-` toggle next to the dungeon name on the **Dungeon Finder** and **Raid Finder** frames to add or remove the currently selected dungeon from your watch list
-- Per-dungeon role overrides — three role checkboxes appear next to each `L-` button so you can scan for Tank/Heal/Damage shortages on a specific dungeon
-- Shift-click on the Raid Finder `L+` adds all available wings to the watch list; Ctrl-click clears them
-- 10-second background scan polls the LFG service for role-bonus rewards and fires a raid-warning banner, taskbar flash and sound when a satchel matches
-- Secure one-click **Queue?** popup that joins the dungeon/scenario/raid-finder wing without navigating Blizzard's UI; safely hides itself in combat or while you're in a group, and re-shows afterwards
-- Per-character watch list and configuration
+- **Watch list buttons** — an `L+` / `L-` toggle next to the dungeon name on the **Dungeon Finder** and **Raid Finder** frames adds or removes the currently selected dungeon
+- **Per-dungeon role overrides** — three role checkboxes appear next to each `L-` button so you can scan for Tank / Heal / Damage shortages on a specific dungeon (or leave them all empty to use your default role set)
+- **Raid Finder bulk add** — Shift-click on the Raid Finder `L+` adds all available wings to the watch list; Ctrl-click clears them
+- **Background polling** — a 10-second `C_Timer` scan polls the LFG service for role-bonus rewards and fires a raid-warning banner, taskbar flash and sound when a satchel matches
+- **One-click queue popup** — a secure **Queue?** dialog joins the dungeon, scenario or Raid Finder wing without navigating Blizzard's UI; safely hides itself during combat or while you're in a group, and re-shows afterwards
+- **Shift-click to consume** — Shift-clicking on the popup buttons also removes that dungeon from your watch list, handy for "one Raid Finder wing per week" workflows
+- **Per-character state** — watch list and preferences are saved per character
 
 ## Installation
 

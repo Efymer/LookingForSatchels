@@ -1,6 +1,6 @@
 # Changelog
 
-## [v0.24]
+## [v1.0]
 
 - Rewritten for Mists of Pandaria Classic (Patch 5.5.3, Interface 50503)
 - Split into Settings / Core / UI modules

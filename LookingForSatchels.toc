@@ -1,8 +1,8 @@
 ## Interface: 50503
 ## Author: Efymer
 ## Title: LookingForSatchels
-## Version: 0.24
-## Notes: Alerts you when an LFG Call to Arms satchel becomes available for a role you're willing to play.
+## Version: 1.0
+## Notes: Watches Call to Arms shortages and pings you the moment a satchel drops for a role you'll play, with a one-click queue popup.
 ## SavedVariablesPerCharacter: LookingForSatchelsOptions
 
 Settings.lua
