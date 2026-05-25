@@ -1,0 +1,10 @@
+## Interface: 50503
+## Author: Efymer
+## Title: LookingForSatchels
+## Version: 0.24
+## Notes: Alerts you when an LFG Call to Arms satchel becomes available for a role you're willing to play.
+## SavedVariablesPerCharacter: LookingForSatchelsOptions
+
+Settings.lua
+Core.lua
+UI.lua

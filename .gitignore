@@ -1,0 +1,5 @@
+CLAUDE.md
+.DS_Store
+Thumbs.db
+*.bak
+.release/
