@@ -1,9 +1,10 @@
 ## Interface: 50503
 ## Author: Efymer
 ## Title: LookingForSatchels
-## Version: 1.0
+## Version: 1.0.1
 ## Notes: Watches Call to Arms shortages and pings you the moment a satchel drops for a role you'll play, with a one-click queue popup.
 ## SavedVariablesPerCharacter: LookingForSatchelsOptions
+## X-Curse-Project-ID: 1553678
 
 Settings.lua
 Core.lua

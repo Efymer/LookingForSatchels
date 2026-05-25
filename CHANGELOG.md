@@ -1,5 +1,9 @@
 # Changelog
 
+## [v1.0.1]
+
+- Hook CurseForge auto-upload (Project ID 1553678)
+
 ## [v1.0]
 
 - Rewritten for Mists of Pandaria Classic (Patch 5.5.3, Interface 50503)
