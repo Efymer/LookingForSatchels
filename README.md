@@ -36,4 +36,4 @@ When a satchel appears for a role you've selected, the addon prints a chat alert
 
 ## Credits
 
-This is a Mists of Pandaria Classic rewrite of the original retail `LookingForSatchels` addon by **lqnrd**. The original concept, queue-popup design and per-dungeon role override are theirs; this version modernises it for MoP Classic 5.5.3 (Interface 50503) with a `C_Timer.NewTicker` scan loop, modular file layout, and the floating status indicator removed.
+This is a Mists of Pandaria Classic rewrite of the original retail `LookingForSatchels` addon by **lqnrd**. The original concept, queue-popup design and per-dungeon role override are theirs; this version modernises it for MoP Classic 5.5.4 (Interface 50504) with a `C_Timer.NewTicker` scan loop, modular file layout, and the floating status indicator removed.

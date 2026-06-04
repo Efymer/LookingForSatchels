@@ -1,5 +1,9 @@
 # Changelog
 
+## [v1.1.1]
+
+- Updated for game patch 5.5.4 (Interface 50504)
+
 ## [v1.1]
 
 - Removed Raid Finder support (Raid Finder doesn't exist in MoP Classic)
