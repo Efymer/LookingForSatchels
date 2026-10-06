@@ -1,4 +1,4 @@
-## Interface: 50504
+## Interface: 120100
 ## Author: Efymer
 ## Title: LookingForSatchels
 ## Version: 1.1.1
